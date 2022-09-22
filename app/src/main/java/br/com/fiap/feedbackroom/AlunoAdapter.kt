@@ -5,18 +5,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import br.com.fiap.feedbackroom.database.Aluno
 
-class ItemAdapter (private val dataSet: List<String>): RecyclerView.Adapter<ItemAdapter.ViewHolder>(){
+class AlunoAdapter (private val dataSet: List<Aluno>): RecyclerView.Adapter<AlunoAdapter.ViewHolder>(){
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view){
-        val textView1: TextView
-        val textView2: TextView
-        val textView3: TextView
+        val textViewNome: TextView
+        val textViewRm: TextView
+        val textViewTurma: TextView
 
         init {
-            textView1 = view.findViewById(R.id.textView1)
-            textView2 = view.findViewById(R.id.textView2)
-            textView3 = view.findViewById(R.id.textView3)
+            textViewNome = view.findViewById(R.id.textViewNome)
+            textViewRm = view.findViewById(R.id.textViewRm)
+            textViewTurma = view.findViewById(R.id.textViewTurma)
         }
     }
 
@@ -28,8 +29,12 @@ class ItemAdapter (private val dataSet: List<String>): RecyclerView.Adapter<Item
         return ViewHolder(view)
     }
 
+    //De/para
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
+        val aluno = dataSet[position]
+        holder.textViewNome.text = aluno.nome
+        holder.textViewRm.text = aluno.rm
+        holder.textViewTurma.text = aluno.turma
     }
 
     //Retorna o tamanho da lista

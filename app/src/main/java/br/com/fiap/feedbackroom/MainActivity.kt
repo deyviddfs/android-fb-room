@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import br.com.fiap.feedbackroom.database.AppDatabase
 import br.com.fiap.feedbackroom.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -27,9 +28,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun load() {
+        val appDb = AppDatabase.getDatabase(binding.root.context)
+        val alunos = appDb.alunoDao().getAll()
         val recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(binding.root.context)
-//        recyclerView.adapter = ItemAdapter(item)
+        recyclerView.adapter = AlunoAdapter(alunos)
 
         val itemDecor = DividerItemDecoration(binding.root.context, DividerItemDecoration.VERTICAL)
         recyclerView.addItemDecoration(itemDecor)

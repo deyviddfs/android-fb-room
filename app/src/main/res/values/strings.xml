@@ -5,4 +5,7 @@
     <string name="salvar">Salvar</string>
     <string name="registro_cadastrado_com_sucesso">Registro cadastrado com sucesso!</string>
     <string name="vazio"></string>
+    <string name="nome">Nome</string>
+    <string name="rm">RM</string>
+    <string name="turma">Turma</string>
 </resources>
