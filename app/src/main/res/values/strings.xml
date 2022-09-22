@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FeedbackRoom</string>
+    <string name="novo">Novo</string>
+    <string name="formulario">Formulário</string>
+    <string name="salvar">Salvar</string>
+    <string name="registro_cadastrado_com_sucesso">Registro cadastrado com sucesso!</string>
+    <string name="vazio"></string>
+</resources>
